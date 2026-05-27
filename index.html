@@ -3,132 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Software Solutions — Contact Us</title>
+  <title>Contact Us | Master Software Solutions</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #111827; min-height: 100vh;
-      display: flex; align-items: center; justify-content: center; padding: 40px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #faf6f3;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: #2a2320;
     }
+    .wrap { width: 100%; max-width: 620px; }
+    .brand { font-size: 21px; font-weight: 800; margin-bottom: 6px; color: #2a2320; }
+    .brand b { color: #e8623f; }
+    .lead { font-size: 14px; color: #6a5d56; margin-bottom: 18px; }
+
     .card {
-      background: #1f2937; border-radius: 14px; padding: 44px 40px;
-      max-width: 680px; width: 100%; box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 8px 30px rgba(70,40,20,0.08);
+      border-top: 4px solid #e8623f;
     }
-    .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .brand-logo { width: 40px; height: 40px; }
-    .brand-logo svg { width: 40px; height: 40px; }
-    .eyebrow { font-size: 13px; color: #9ca3af; margin-bottom: 6px; }
-    h1 { font-size: 26px; font-weight: 700; color: white; margin-bottom: 6px; }
-    .subtitle { font-size: 14px; color: #9ca3af; margin-bottom: 6px; }
-    .email-link { color: #ea580c; font-size: 14px; margin-bottom: 28px; display: block; }
-    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .field { margin-bottom: 18px; }
-    label { display: block; font-size: 13px; font-weight: 600; color: #d1d5db; margin-bottom: 6px; }
-    .req { color: #ef4444; }
+    .card h3 { font-size: 22px; color: #2a2320; margin-bottom: 4px; }
+    .card .sub { font-size: 13px; color: #8a7d76; margin-bottom: 22px; }
+
+    .field { margin-bottom: 15px; }
+    label { display: block; font-size: 12px; font-weight: 600; color: #4a403a; margin-bottom: 5px; }
+    label .req { color: #e53935; }
     input, select, textarea {
-      width: 100%; padding: 11px 14px;
-      background: #374151; border: 1.5px solid #4b5563;
-      border-radius: 8px; font-size: 14px; color: white;
-      outline: none; transition: border-color 0.2s; font-family: inherit;
+      width: 100%; padding: 11px 13px; border: 1px solid #e0d6cf; border-radius: 6px;
+      font-size: 14px; font-family: inherit; background: #fff; color: #222;
     }
-    input::placeholder, textarea::placeholder { color: #6b7280; }
-    select option { background: #374151; color: white; }
-    input:focus, select:focus, textarea:focus { border-color: #ea580c; }
-    .phone-row { display: grid; grid-template-columns: 170px 1fr; gap: 10px; }
-    textarea { resize: vertical; min-height: 110px; }
+    input:focus, select:focus, textarea:focus {
+      outline: none; border-color: #e8623f; box-shadow: 0 0 0 3px rgba(232,98,63,0.13);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .phone-grp { display: flex; gap: 8px; }
+    .phone-grp select { flex: 0 0 150px; }
+    .phone-grp input { flex: 1; }
+
     button {
-      background: #ea580c; color: white; border: none;
-      padding: 13px 32px; border-radius: 8px;
-      font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s;
+      margin-top: 8px; background: #e8623f; color: #fff; border: none;
+      padding: 12px 32px; font-size: 15px; font-weight: 700; border-radius: 6px; cursor: pointer;
     }
-    button:hover { background: #c2410c; }
-    button:disabled { background: #6b3a2a; cursor: not-allowed; }
-    .status {
-      margin-top: 16px; padding: 12px 16px; border-radius: 8px;
-      font-size: 14px; display: none;
-    }
-    .status.success { background: #064e3b; color: #6ee7b7; border: 1px solid #065f46; }
-    .status.error   { background: #7f1d1d; color: #fca5a5; border: 1px solid #991b1b; }
+    button:hover { background: #d4502f; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+
+    .status { margin-top: 14px; font-size: 13px; min-height: 18px; }
+    .status.ok { color: #2e7d32; }
+    .status.err { color: #d32f2f; }
+    .status.pending { color: #8a7d76; }
   </style>
 </head>
 <body>
-<div class="card">
-  <div class="brand">
-    <!-- MSS swirl logo in SVG -->
-    <svg class="brand-logo" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="14" cy="20" r="10" fill="none" stroke="#06b6d4" stroke-width="3"/>
-      <circle cx="26" cy="20" r="10" fill="none" stroke="#ea580c" stroke-width="3"/>
-    </svg>
-  </div>
-  <h1>Transform your Business with us</h1>
-  <p class="subtitle">Share your business details and get all your questions answered by our experts. Let's discuss your challenges, goals and ways to move towards sustainable growth.</p>
-  <a class="email-link" href="mailto:info@mastersoftwaresolutions.com">You can also drop us a direct email at info@mastersoftwaresolutions.com</a>
+  <div class="wrap">
+    <div class="brand">Master <b>Software Solutions</b></div>
+    <div class="lead">Let's get connected — transform your business with us. Share your business details and our experts will discuss your challenges and goals.</div>
 
-  <form id="form">
-    <div class="row">
-      <div class="field">
-        <label>Name <span class="req">*</span></label>
-        <input name="name" type="text" placeholder="Sarah Johnson" required>
-      </div>
-      <div class="field">
-        <label>Email <span class="req">*</span></label>
-        <input name="email" type="email" placeholder="sarah@company.com" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="field">
-        <label>Phone Number</label>
-        <div class="phone-row">
-          <select name="phone_country">
-            <option value="IN">India (भारत) +91</option>
-            <option value="CA">Canada +1</option>
-            <option value="US">United States +1</option>
-            <option value="GB">United Kingdom +44</option>
-            <option value="AU">Australia +61</option>
-            <option value="AE">UAE +971</option>
-          </select>
-          <input name="phone_number" type="tel" placeholder="+91">
+    <div class="card">
+      <h3>Contact Us</h3>
+      <div class="sub">Tell us about your project and we'll get back to you shortly.</div>
+
+      <form id="leadForm">
+        <div class="field">
+          <label>Name <span class="req">*</span></label>
+          <input type="text" name="name" required>
         </div>
-      </div>
-      <div class="field">
-        <label>Business Name</label>
-        <input name="business_name" type="text" placeholder="Acme Manufacturing Inc.">
-      </div>
+
+        <div class="field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="field">
+          <label>Phone <span class="req">*</span></label>
+          <div class="phone-grp">
+            <select id="country" name="country" required>
+              <option value="India" data-code="+91" selected>India (+91)</option>
+              <option value="United States" data-code="+1">United States (+1)</option>
+              <option value="Canada" data-code="+1">Canada (+1)</option>
+              <option value="United Kingdom" data-code="+44">United Kingdom (+44)</option>
+              <option value="Australia" data-code="+61">Australia (+61)</option>
+              <option value="United Arab Emirates" data-code="+971">UAE (+971)</option>
+              <option value="Saudi Arabia" data-code="+966">Saudi Arabia (+966)</option>
+              <option value="Germany" data-code="+49">Germany (+49)</option>
+              <option value="Singapore" data-code="+65">Singapore (+65)</option>
+              <option value="Ireland" data-code="+353">Ireland (+353)</option>
+              <option value="Other" data-code="">Other</option>
+            </select>
+            <input type="tel" id="phone" name="phone_number" placeholder="Phone" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Business Name</label>
+          <input type="text" name="company_name">
+        </div>
+
+        <div class="field">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell us about your requirements"></textarea>
+        </div>
+
+        <input type="hidden" name="source" value="mss">
+
+        <button type="submit" id="submitBtn">Submit</button>
+        <div class="status" id="status"></div>
+      </form>
     </div>
-    <div class="field">
-      <label>Message</label>
-      <textarea name="message" placeholder="We're looking for an ERP solution for our manufacturing operations..."></textarea>
-    </div>
-    <button type="submit" id="btn">Submit</button>
-  </form>
-  <div class="status" id="status"></div>
-</div>
-<script>
-const SUBMIT_URL = 'https://investigator-barnes-buffalo-metropolitan.trycloudflare.com';
-document.getElementById('form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = document.getElementById('btn');
-  const statusEl = document.getElementById('status');
-  btn.disabled = true; btn.textContent = 'Sending…';
-  const data = Object.fromEntries(new FormData(e.target).entries());
-  data.source = 'mss';
-  try {
-    await fetch(SUBMIT_URL, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+  </div>
+
+  <script>
+    const ENDPOINT = "https://lead-automation.staging02.com/submit";
+
+    const form = document.getElementById('leadForm');
+    const statusEl = document.getElementById('status');
+    const btn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Block submission until every required field is valid (shows native prompts)
+      if (!form.reportValidity()) return;
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      const countrySel = document.getElementById('country');
+      const code = countrySel.selectedOptions[0].getAttribute('data-code') || '';
+      if (data.phone_number) data.phone_number = (code ? code + ' ' : '') + data.phone_number;
+      data.submitted_at = new Date().toISOString();
+
+      statusEl.textContent = 'Sending...';
+      statusEl.className = 'status pending';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const out = await res.json().catch(() => ({ ok: res.ok }));
+        if (res.ok && out.ok !== false) {
+          statusEl.textContent = 'Thank you! Our team will reach out shortly.';
+          statusEl.className = 'status ok';
+          form.reset();
+        } else {
+          statusEl.textContent = 'Something went wrong: ' + (out.error || res.status);
+          statusEl.className = 'status err';
+        }
+      } catch (err) {
+        statusEl.textContent = 'Could not reach the server: ' + err.message;
+        statusEl.className = 'status err';
+      } finally {
+        btn.disabled = false;
+      }
     });
-    statusEl.className = 'status success';
-    statusEl.textContent = '✅ Pipeline triggered — lead sent to automation.';
-    statusEl.style.display = 'block';
-    e.target.reset();
-  } catch (err) {
-    statusEl.className = 'status error';
-    statusEl.textContent = '⚠️ Could not reach server: ' + err.message;
-    statusEl.style.display = 'block';
-  }
-  btn.disabled = false; btn.textContent = 'Submit';
-});
-</script>
+  </script>
 </body>
 </html>
